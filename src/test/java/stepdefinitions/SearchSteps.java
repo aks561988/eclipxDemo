@@ -16,21 +16,21 @@ public class SearchSteps {
 	
 	// User being navigated to google search page
 	@Given("User is on the Google Search page")
-	public void user_is_on_the_google_search_page_and_a_search_box_is_displayed() throws Throwable{
+	public void user_is_on_the_google_search_page() throws Throwable{
 		Assert.assertTrue(googleSearch.isSearchBarDisplayed());
 		System.out.println("Step 1 : Google Search page displayed to the user");
 	}
 	
 	//User enters keyword
 	@When("User enters {string} on the text box")
-	public void user_enters_search_text_on_the_search_box(String searchText) throws Throwable{
+	public void user_enters(String searchText) throws Throwable{
 		googleSearch.search(searchText);
 		System.out.println("Step 2 : User entered " + searchText + " on the search box");
 	}
 	
 	// First link for the search result was selected
 	@And("User selects the first link in the results page") 
-	public void user_clicks_on_the_first_link_available_in_the_search_results() throws Throwable{
+	public void user_selects_the_first_link_in_the_results_page() throws Throwable{
 		googleSearch.clickFirstLink();
 		System.out.println("Step 3 : User clicks on the first link in result page");
 	}
